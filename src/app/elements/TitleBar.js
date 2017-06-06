@@ -1,51 +1,20 @@
-import {BaseElement} from '../BaseElement';
+import {BaseNav} from '../BaseNav';
 import {componentHandler} from 'material-design-lite';
 
-export class TitleBar extends BaseElement {
+export class TitleBar extends BaseNav {
 
     constructor(title) {
-        super();
+        super(title);
 
         this.title = title;
-        let _title = this.title;
-
-        this.id = "TitleBar";
-        let _links = [];
-        // let _links = this.links;
+        this.id = "navBar";
+        this.links = [];
     }
 
     //enables material-design-lite javascript
-    enableJS(){
-        componentHandler.upgradeElement();
-    }
-    
-    /**
-     *
-     * @param (name: string, ahref: string)
-     */
-    addLink(title, href) {
-
-        if(!this.links)
-            this.links = [];
-
-        this.links.push({title, href});
-        
-        // this.destoyer();
-    }
-
-    removeLink(linktitle) {
-        this
-            .links
-            .find((link, i) => {
-
-                if (link.title === linktitle) {
-                    this
-                        .links
-                        .splice(i, 1);
-                    this.destoyer();
-                }
-            });
-    }
+    // enableJS(){
+    //     componentHandler.upgradeElement();
+    // }
 
     getHTMLContent() {
 
@@ -75,33 +44,10 @@ export class TitleBar extends BaseElement {
                     <nav class="mdl-navigation">
                         ${linkHTML}
                     </nav>
-                </div>
-                <main class="mdl-layout__content">
-                    <div class="page-content"><!-- Your content goes here --></div>
-                </main>
-                </div>
+               
             </div>
         `;
     }
 
-    /**
-     * GETTERS / SETTERS
-     */
-    get title() {
-        return this._title;
-    }
-
-    set title(string) {
-        this._title = string;
-        this.destoyer();
-    }
-
-    get links() {
-        return this._links;
-    }
-    set links(array) {
-
-        this._links = array;
-        this.destoyer();
-    }
+   
  }

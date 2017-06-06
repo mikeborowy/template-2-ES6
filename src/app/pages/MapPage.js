@@ -1,6 +1,6 @@
 import {BasePage} from '../BasePage';
-import {GoogleMap} from '../ui/GoogleMap';
-import {application} from '../../app.js';
+import {GoogleMap} from '../elements/GoogleMap';
+import {application} from '../../index.js';
 import GoogleMaps from 'google-maps';
 
 

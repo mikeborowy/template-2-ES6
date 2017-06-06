@@ -9,7 +9,7 @@ export class BaseElement{
     addTo(target){
 
         this.create();
-        target.append(this.element);
+        $(target).append(this.element);
         this._target = target;
     }
 
@@ -26,8 +26,7 @@ export class BaseElement{
     }
 
     create(){
-        let htmlContent = this.getHTMLContent();
-        this.element = $(htmlContent);
+        this.element = $(this.getHTMLContent());
     }
 
     getHTMLContent(){

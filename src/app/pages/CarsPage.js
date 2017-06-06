@@ -1,6 +1,6 @@
 import {BasePage} from '../BasePage';
-import {Table} from '../ui/Table.js';
-import {application} from '../../app.js';
+import {Table} from '../elements/Table.js';
+import {application} from '../../index.js';
 
 /*{
     license: 'AT9900',
